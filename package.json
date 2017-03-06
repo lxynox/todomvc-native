@@ -1,0 +1,41 @@
+{
+  "name": "todo-electron",
+  "description": "Simple vue2.0-powered TodoMVC app built with electron",
+  "version": "0.0.1",
+  "author": "lxynox <lxynox@gmail.com>",
+  "main": "app/main.js",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "test": "karma start karma.config.js"
+  },
+  "dependencies": {
+    "todomvc-app-css": "^2.0.6",
+    "todomvc-common": "^1.0.3",
+    "vue": "^2.2.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.0.0",
+    "babel-loader": "^6.0.0",
+    "babel-preset-latest": "^6.0.0",
+    "chai": "^3.5.0",
+    "cross-env": "^3.0.0",
+    "css-loader": "^0.25.0",
+    "electron-builder": "^15.1.1",
+    "file-loader": "^0.9.0",
+    "karma": "^1.5.0",
+    "karma-mocha": "^1.3.0",
+    "karma-phantomjs-launcher": "^1.0.2",
+    "karma-sinon-chai": "^1.2.4",
+    "karma-webpack": "^2.0.2",
+    "mocha": "^3.2.0",
+    "phantomjs": "^2.1.7",
+    "sinon": "^1.17.7",
+    "sinon-chai": "^2.8.0",
+    "vue-loader": "^11.0.0",
+    "vue-template-compiler": "^2.2.1",
+    "webpack": "^2.2.0",
+    "webpack-dev-server": "^2.2.0"
+  }
+}
