@@ -1,2 +1,5 @@
 # todomvc-native
-Bring the`TodoMVC` to native userland
+Bring `TodoMVC` to native userland
+<sub>Yet another start-up app for electron</sub>
+
+![app preview](preview.png)
