@@ -81,6 +81,8 @@
     "sinon": "^1.17.7",
     "sinon-chai": "^2.8.0",
     "vue-loader": "^11.0.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^2.5.0",
     "vue-template-compiler": "^2.2.1",
     "webpack": "^2.2.0",
     "webpack-dev-server": "^2.2.0",

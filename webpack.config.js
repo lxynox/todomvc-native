@@ -5,7 +5,7 @@ module.exports = {
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './app/dist'),
-    publicPath: '/dist/',
+    publicPath: '/app/dist/',
     filename: 'bundle.js'
   },
   module: {
@@ -15,6 +15,8 @@ module.exports = {
         loader: 'vue-loader',
         options: {
           loaders: {
+            'scss': 'vue-style-loader!css-loader!sass-loader',
+            'sass': 'vue-style-loader!css-loader!sass-loader?indentedSyntax'
           }
           // other vue-loader options go here
         }
