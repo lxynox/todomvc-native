@@ -9,6 +9,7 @@
     "postinstall": "install-app-deps",
     "app": "cross-env NODE_ENV=development electron app/",
     "dist": "npm run mac && npm run linux && npm run win",
+    "pack": "build --dir",
     "mac": "build --mac",
     "linux": "build --linux deb tar.xz",
     "win": "build --win --ia32",
@@ -18,8 +19,10 @@
   },
   "build": {
     "appId": "com.lxynox.todomvc",
-    "category": "public.app-category.utilities",
     "asar": true,
+    "mac": {
+      "category": "public.app-category.utilities"
+    },
     "win": {
       "target": [
         "squirrel"

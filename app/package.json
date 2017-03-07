@@ -1,5 +1,5 @@
 {
-  "name": "todomvc-electron",
+  "name": "WhatToDo",
   "version": "0.0.1",
   "description": "electron version todomvc",
   "main": "main.js",
