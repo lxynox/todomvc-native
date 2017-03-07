@@ -1,20 +1,20 @@
 import Vue from 'vue'
-import TodoApp from '../src/view/TodoApp.vue'
+import TodoApp from '../src/view/todo-app.vue'
 import store from '../src/store'
 
 describe('TodoApp.vue', function() {
-
-  let Ctor, vm
+  let Ctor
+  let vm
 
   beforeEach(function() {
     Ctor = Vue.extend(TodoApp)
-    vm = new Ctor({ propsData: {visibility: 'all'} }).$mount()
+    vm = new Ctor({propsData: {visibility: 'all'}}).$mount()
   })
 
   it('should get initial todo items from store', function() {
     sinon.spy(store, 'fetch')
     Ctor = Vue.extend(TodoApp)
-    new Ctor({ propsData: {visibility: 'all'} }).$mount()
+    new Ctor({propsData: {visibility: 'all'}}).$mount()
     expect(store.fetch.calledOnce).to.be.true
   })
 

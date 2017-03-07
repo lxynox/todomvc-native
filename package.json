@@ -6,14 +6,60 @@
   "main": "app/main.js",
   "private": true,
   "scripts": {
+    "postinstall": "install-app-deps",
+    "app": "cross-env NODE_ENV=development electron app/",
+    "dist": "npm run mac && npm run linux && npm run win",
+    "mac": "build --mac",
+    "linux": "build --linux deb tar.xz",
+    "win": "build --win --ia32",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
-    "test": "karma start karma.config.js"
+    "test": "xo && karma start karma.config.js"
+  },
+  "build": {
+    "appId": "com.lxynox.todomvc",
+    "category": "public.app-category.utilities",
+    "asar": true,
+    "win": {
+      "target": [
+        "squirrel"
+      ]
+    }
+  },
+  "xo": {
+    "space": true,
+    "semicolon": false,
+    "env": [
+      "browser",
+      "node",
+      "mocha"
+    ],
+    "overrides": [
+      {
+        "files": "test/**/*.js",
+        "rules": {
+          "no-undef": 0,
+          "no-unused-expressions": 0,
+          "space-before-function-paren": 0
+        }
+      },
+      {
+        "files": "src/**",
+        "esnext": true
+      }
+    ],
+    "ignore": [
+      "webpack*",
+      "app/dist/**",
+      "build/**",
+      "assets/**"
+    ]
   },
   "dependencies": {
     "todomvc-app-css": "^2.0.6",
     "todomvc-common": "^1.0.3",
-    "vue": "^2.2.1"
+    "vue": "^2.2.1",
+    "vue-router": "^2.3.0"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",
@@ -22,6 +68,7 @@
     "chai": "^3.5.0",
     "cross-env": "^3.0.0",
     "css-loader": "^0.25.0",
+    "electron": "^1.6.1",
     "electron-builder": "^15.1.1",
     "file-loader": "^0.9.0",
     "karma": "^1.5.0",
@@ -36,6 +83,7 @@
     "vue-loader": "^11.0.0",
     "vue-template-compiler": "^2.2.1",
     "webpack": "^2.2.0",
-    "webpack-dev-server": "^2.2.0"
+    "webpack-dev-server": "^2.2.0",
+    "xo": "^0.17.1"
   }
 }

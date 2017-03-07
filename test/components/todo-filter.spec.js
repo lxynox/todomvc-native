@@ -1,8 +1,7 @@
 import Vue from 'vue'
-import TodoFilter from '../../src/components/TodoFilter.vue'
+import TodoFilter from '../../src/components/todo-filter.vue'
 
 describe('TodoFilter.vue', function () {
-
   let vm
   let Ctor = Vue.extend(TodoFilter)
 
@@ -12,7 +11,7 @@ describe('TodoFilter.vue', function () {
       remaining: 0,
       visibility: 'all'
     }
-    vm = new Ctor({ propsData }).$mount()
+    vm = new Ctor({propsData}).$mount()
   })
 
   it('should hide the footer when no todo items', function() {
@@ -34,7 +33,7 @@ describe('TodoFilter.vue', function () {
     vm.$props.visibility = 'active'
 
     let anchors = vm.$el.querySelectorAll('ul> li> a')
-      Vue.nextTick(() => {
+    Vue.nextTick(() => {
       expect(anchors[1].className).to.include('selected')
       expect(anchors[0].className).to.not.include('selected')
       expect(anchors[2].className).to.not.include('selected')

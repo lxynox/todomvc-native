@@ -1,4 +1,5 @@
 var webpackConfig = require('./webpack.config.js')
+
 delete webpackConfig.entry
 
 // karma.conf.js

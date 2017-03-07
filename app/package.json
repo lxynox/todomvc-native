@@ -1,0 +1,8 @@
+{
+  "name": "todomvc-electron",
+  "version": "0.0.1",
+  "description": "electron version todomvc",
+  "main": "main.js",
+  "author": "lxynox",
+  "license": "MIT"
+}

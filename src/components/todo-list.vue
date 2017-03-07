@@ -25,6 +25,8 @@
 </template>
 
 <script>
+'use strict'
+
 export default {
   name: 'todo-list',
   props: ['total', 'filteredTodos'],

@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import TodoInput from '../../src/components/TodoInput.vue'
+import TodoInput from '../../src/components/todo-input.vue'
 
 function simulateKeypress(target, keyCode) {
   let e = document.createEvent('HTMLEvents')

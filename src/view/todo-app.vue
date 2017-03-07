@@ -5,7 +5,7 @@
     </todo-input>
 
     <todo-list
-      :todos="todos"
+      :total="todos.length"
       :filteredTodos="filteredTodos"
       @editTodo="editTodo"
       @removeTodo="removeTodo">
@@ -13,7 +13,7 @@
     </todo-list>
 
     <todo-filter
-      :todos="todos"
+      :total="todos.length"
       :remaining="remaining"
       :visibility="visibility"
       @removeCompleted="removeCompleted">
@@ -22,10 +22,12 @@
 </template>
 
 <script>
+'use strict'
+
 import store from '../store'
-import TodoInput from '../components/TodoInput.vue'
-import TodoList from '../components/TodoList.vue'
-import TodoFilter from '../components/TodoFilter.vue'
+import TodoInput from '../components/todo-input.vue'
+import TodoList from '../components/todo-list.vue'
+import TodoFilter from '../components/todo-filter.vue'
 
 let filters = {
   all: (todos) => todos,

@@ -8,6 +8,8 @@
 </template>
 
 <script>
+'use strict'
+
 export default {
   name: 'todo-input',
   data () {

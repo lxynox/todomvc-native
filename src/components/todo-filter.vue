@@ -15,6 +15,8 @@
 </template>
 
 <script>
+'use strict'
+
 export default {
   name: 'todo-filter',
   props: ['total', 'remaining', 'visibility'],

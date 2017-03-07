@@ -1,12 +1,12 @@
 'use strict'
 
-var STORAGE_KEY = 'todos-vuejs'
+const STORAGE_KEY = 'todos-vuejs'
 
 export default {
-  fetch: function () {
+  fetch() {
     return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]')
   },
-  save: function (todos) {
+  save(todos) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(todos))
   }
 }
